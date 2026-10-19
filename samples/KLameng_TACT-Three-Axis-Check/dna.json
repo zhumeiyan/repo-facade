@@ -1,0 +1,15 @@
+{
+  "hash": "8f51e3dcc385",
+  "motif": "percolation",
+  "hue": 256.5,
+  "grid": 9,
+  "seed": 2404508636,
+  "ramp": [
+    "#a288e6",
+    "#a880de",
+    "#ae79d4",
+    "#b273c9",
+    "#b46ebd",
+    "#af6bac"
+  ]
+}

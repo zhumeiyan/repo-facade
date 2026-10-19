@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>easyAi</title>
+<style>
+:root{--bg:#0e1116;--fg:#e8ecf2;--mut:#98a3b3;--dim:#5c6675;--acc:#da80ab}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ line-height:1.65}
+.wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:clamp(28px,5.2vw,44px);margin:0 0 12px;letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:clamp(15px,2.6vw,19px);margin:0 0 28px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.badge{border:1px solid;padding:5px 13px;border-radius:999px;font-size:14px}
+.repo a{color:var(--acc);text-decoration:none;font-size:14px;word-break:break-all}
+section{margin:44px 0;padding-top:28px;border-top:1px solid #1e2531}
+h2{font-size:20px;margin:0 0 8px}
+p{color:var(--mut);font-size:15px;margin:6px 0}
+img,svg{max-width:100%;height:auto;display:block;border-radius:10px;background:#141922}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+td,th{padding:7px 8px;border-bottom:1px solid #1e2531;text-align:left;color:var(--mut)}
+th{color:var(--fg);font-weight:600}
+code{background:#141922;padding:2px 6px;border-radius:4px;font-size:13px;color:#da80ab}
+footer{margin-top:56px;color:var(--dim);font-size:13px}
+</style></head><body><div class="wrap">
+<h1>easyAi</h1>
+<p class="sub">easyAi — 一套可复现的实验与自检材料</p>
+<div class="badges"></div>
+
+<section>
+<h2>形象 / Identity</h2>
+<p>母题 <b>Lattice field / 晶格场</b> · 视觉 DNA <code>2bce9b195fa7</code></p>
+<p>形象由仓库标识的哈希确定性派生——同一个仓库永远生成同一张脸，不每次重画。</p>
+<img src="social-preview.png" alt="social preview">
+<object type="image/svg+xml" data="identity.svg" style="width:100%;min-height:200px"></object>
+</section>
+<section>
+<h2>状态 / States</h2>
+<p>六个状态，颜色与呼吸节奏各不相同；动画为 SVG 内嵌 CSS，无 JavaScript。</p>
+<object type="image/svg+xml" data="states.svg" style="width:100%;min-height:300px"></object>
+<table><tr><th>状态</th><th>节奏</th><th>含义</th></tr>
+<tr><td>静置 · idle</td><td>4s 慢呼吸</td><td>冷色低亮度</td></tr><tr><td>推演 · thinking</td><td>0.8s 快脉冲</td><td>琥珀偏移</td></tr><tr><td>执行 · busy</td><td>持续旋转</td><td>亮度拉高</td></tr><tr><td>受阻 · blocked</td><td>脉冲冻结</td><td>低饱和红</td></tr><tr><td>失败 · error</td><td>红色</td><td>一次抽动后静止</td></tr><tr><td>达成 · success</td><td>短暂暖脉冲 → 回落 idle</td><td>短暂暖脉冲 → 回落 idle</td></tr>
+</table>
+</section>
+<section>
+<h2>怎么用</h2>
+<p><code>python3 facade.py --repo owner/name --out ./assets</code></p>
+<p>产出：social-preview.png(1280×640) · identity.svg(1200×420) · states.svg · README_SNIPPET.md · 本页</p>
+</section>
+<footer>无 JavaScript · 无外部依赖 · 可版本化回滚 · 没有人脸</footer>
+</div></body></html>
