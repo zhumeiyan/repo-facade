@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo Facade — 给仓库做一套活的状态立面</title>
+<style>
+:root{--bg:#0e1116;--fg:#e8ecf2;--mut:#98a3b3;--dim:#5c6675;--acc:#8fd0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);line-height:1.65;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:56px 22px 90px}
+h1{font-size:clamp(30px,6vw,48px);margin:0 0 10px;letter-spacing:-.02em}
+.lead{font-size:clamp(16px,2.8vw,20px);color:var(--mut);margin:0 0 10px}
+.cmd{background:#141922;border:1px solid #1e2531;border-radius:8px;padding:12px 14px;
+font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--acc);overflow-x:auto;margin:18px 0 34px}
+section{margin-top:46px;padding-top:26px;border-top:1px solid #1e2531}
+h2{font-size:21px;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{display:block;text-decoration:none;border:1px solid #1e2531;border-radius:12px;
+overflow:hidden;background:#141922;transition:border-color .2s}
+.card:hover{border-color:#33405a}
+.card img{width:100%;display:block}
+.cap{padding:12px 14px}
+.cap b{display:block;color:var(--fg);font-size:14px;word-break:break-all}
+.cap span{color:var(--dim);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+td,th{padding:9px 8px;border-bottom:1px solid #1e2531;text-align:left;color:var(--mut)}
+th{color:var(--fg)}
+ul{color:var(--mut);font-size:15px;padding-left:20px}
+li{margin:5px 0}
+b{color:var(--fg)}
+footer{margin-top:60px;color:var(--dim);font-size:13px}
+a{color:var(--acc)}
+</style></head><body><div class="wrap">
+<h1>Repo Facade</h1>
+<p class="lead">给任意仓库生成一套<b>活的状态立面</b>——扫一眼就懂，在 README 里真的会动，能被 git 版本化。</p>
+<div class="cmd">python3 facade.py --repo owner/name --out ./assets</div>
+<section><h2>它跟素材库贴图的区别</h2><ul>
+<li><b>零 JavaScript</b>：动画是 SVG 内嵌 CSS <code>@keyframes</code>。GitHub 会剥掉 <code>&lt;script&gt;</code>，所以这是动画能在 README 里真的播放的唯一办法。</li>
+<li><b>身份连续</b>：形象由仓库标识的哈希确定性派生，同一仓库永远同一张脸，不每次重画。</li>
+<li><b>无面</b>：不画人脸、拟人动物、表情包。</li>
+<li><b>母题来自结构</b>：渗流 / 枝晶 / 晶格，由仓库自身签名决定——不是通用科技背景。</li>
+<li><b>可回滚</b>：SVG / HTML / MD 全是文本，能 diff、能回退。</li>
+</ul></section>
+<section><h2>样例（真实公开仓库，一条命令生成）</h2>
+<div class="grid"><a class="card" href="samples/KLameng_TACT-Three-Axis-Check/index.html">
+<img src="samples/KLameng_TACT-Three-Axis-Check/social-preview.png" alt="KLameng/TACT-Three-Axis-Check">
+<div class="cap"><b>KLameng/TACT-Three-Axis-Check</b><span>渗流阈值 Percolation · DNA 8f51e3dcc385</span></div></a>
+<a class="card" href="samples/facebook_react/index.html">
+<img src="samples/facebook_react/social-preview.png" alt="facebook/react">
+<div class="cap"><b>facebook/react</b><span>渗流阈值 Percolation · DNA 8cd2d1eef7b7</span></div></a>
+<a class="card" href="samples/dromara_easyAi/index.html">
+<img src="samples/dromara_easyAi/social-preview.png" alt="dromara/easyAi">
+<div class="cap"><b>dromara/easyAi</b><span>晶格场 Lattice · DNA 2bce9b195fa7</span></div></a>
+</div></section>
+<section><h2>价格</h2>
+<table><tr><th></th><th>基础</th><th>标准</th><th>全套</th></tr>
+<tr><td>社交预览 PNG 1280×640</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>形象横幅 SVG 1200×420</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>六状态呼吸条</td><td>—</td><td>✓</td><td>✓</td></tr>
+<tr><td>一页式演示站</td><td>—</td><td>✓</td><td>✓</td></tr>
+<tr><td>README 片段</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>覆盖仓库</td><td>1</td><td>1</td><td>≤5</td></tr>
+<tr><td><b>价格</b></td><td><b>$35 / ¥260</b></td><td><b>$85 / ¥620</b></td><td><b>$180 / ¥1300</b></td></tr>
+</table></section>
+<section><h2>六状态</h2>
+<table><tr><th>状态</th><th>节奏</th><th>含义</th></tr>
+<tr><td>idle 静置</td><td>4s 慢呼吸</td><td>冷色低亮度</td></tr>
+<tr><td>thinking 推演</td><td>0.8s 快脉冲</td><td>琥珀偏移</td></tr>
+<tr><td>busy 执行</td><td>持续旋转</td><td>亮度拉高</td></tr>
+<tr><td>blocked 受阻</td><td>冻结</td><td>低饱和红</td></tr>
+<tr><td>error 失败</td><td>一次抽动后静止</td><td>红</td></tr>
+<tr><td>success 达成</td><td>短暂暖脉冲后回落</td><td>暖</td></tr>
+</table></section>
+<footer>零 JavaScript · 无外部依赖 · 可版本化 · 无面<br>
+源码与商品页文案：<a href="https://github.com/zhumeiyan/repo-facade">github.com/zhumeiyan/repo-facade</a></footer>
+</div></body></html>
