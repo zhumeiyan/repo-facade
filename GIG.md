@@ -51,7 +51,7 @@ at a glance, animates in the README, and stays version-controlled.
 **Turnaround:** 24h (Basic), 48h (Standard), 5 days (Premium).
 
 **Samples** (generated from real public repos, one command each):
-- `KLameng/TACT-Three-Axis-Check` → dendritic
+- `zhumeiyan/luoshen-o1` → dendritic
 - `facebook/react` → percolation
 - `dromara/easyAi` → lattice
 
@@ -98,7 +98,6 @@ at a glance, animates in the README, and stays version-controlled.
 
 **周期**：基础 24 小时 · 标准 48 小时 · 全套 5 天
 
-**样例**（真实公开仓库，一条命令生成）：TACT → 枝晶 · react → 渗流 · easyAi → 晶格
 
 **你只需要给我**：仓库地址。其余我自己抓。
 
