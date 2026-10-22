@@ -53,7 +53,6 @@ at a glance, animates in the README, and stays version-controlled.
 **Samples** (generated from real public repos, one command each):
 - `zhumeiyan/luoshen-o1` → dendritic
 - `facebook/react` → percolation
-- `dromara/easyAi` → lattice
 
 **What I need from you:** repo URL. That's it. I pull the rest.
 
